@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         btnForceLogin = findViewById(R.id.btn_force_login);
         progress  = findViewById(R.id.progress);
 
-        etBaseUrl.setText("http://167.71.73.111:8000/");
+        etBaseUrl.setText("http://##############/");
 
         btnLogin.setOnClickListener(v -> doLogin());
         btnForceLogin.setOnClickListener(v -> doForceLogin());
