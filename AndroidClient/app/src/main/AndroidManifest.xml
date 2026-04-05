@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alparslan.gibapi">
+
+    <!-- 🔹 İzinler burada -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- 🔹 ACTIVITY’LER BURANIN İÇİNDE -->
+    <application
+
+
+        android:label="gibapi"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+        android:name=".App">
+
+
+        <!-- 🔵 LAUNCHER (İLK AÇILAN) ACTIVITY -->
+        <activity android:name=".ui.LoginActivity"
+
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 🔹 DİĞER ACTIVITY’LER -->
+        <activity android:name=".ui.InvoiceActivity"/>
+        <activity android:name=".ui.ResultActivity"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+    </application>
+</manifest>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Alıcı VKN / TCKN -->
+    <EditText
+        android:id="@+id/etVkn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Alıcı VKN/TCKN"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Alıcı Ünvan / Ad Soyad -->
+    <EditText
+        android:id="@+id/etUnvan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Alıcı Ünvan / Ad Soyad"
+        android:inputType="textPersonName"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etVkn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Ürün / Hizmet -->
+    <EditText
+        android:id="@+id/etUrun"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ürün / Hizmet"
+        android:inputType="textCapSentences"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etUnvan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Miktar -->
+    <EditText
+        android:id="@+id/etMiktar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Miktar (örn 1)"
+        android:inputType="number"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etUrun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Birim Fiyat -->
+    <EditText
+        android:id="@+id/etbirimfiyat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Birim Fiyat (örn 100.50)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etMiktar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- KDV Oranı -->
+    <EditText
+        android:id="@+id/etkdv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="KDV Oranı (örn 20)"
+        android:inputType="number"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etbirimfiyat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Fatura Oluştur Butonu -->
+    <Button
+        android:id="@+id/btncreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fatura Oluştur"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/etkdv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Progress -->
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btncreate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
